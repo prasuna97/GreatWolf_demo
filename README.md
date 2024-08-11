@@ -1,57 +1,58 @@
-***GreatWolf Data Engineering Project
-Table of Contents
-Introduction
-Database Tables
-dim_property
-property_inventory
-reservations
-dim_revenue_center
-ancillary_data
-Use Case
-Technology Stack and Approach
-SQLite Database
-SQLAlchemy
-Future Enhancements
-Leveraging Cloud Services
-Implementing Snowflake
-Production Deployment
-Scaling for Large Data Ingestion
-Introduction
+***GreatWolf Data Engineering Project***
+**Table of Contents**
+1. Introduction
+2. Database Tables
+        dim_property
+        property_inventory
+        reservations
+        dim_revenue_center
+        ancillary_data
+3. Use Case
+4. Technology Stack and Approach
+5. SQLite Database
+6. SQLAlchemy
+7. Future Enhancements
+8. Leveraging Cloud Services
+9. Implementing Snowflake
+10. Production Deployment
+11. Scaling for Large Data Ingestion
+
+1. Introduction
 This project involves building an ETL (Extract, Transform, Load) pipeline that processes data related to hotel properties, reservations, revenue centers, and ancillary services. The goal is to generate summary reports for revenue and occupancy by room type, as well as ancillary revenue. The data is stored in an SQLite database, and the pipeline is designed to extract data, perform necessary transformations, and load the results into summary tables.
 
-Database Tables
-dim_property
-Description: This table stores information about each property.
-Columns:
-PROPERTY_ID: Unique identifier for the property.
-REPORT_NAME: Name of the property as it appears in reports.
-PROPERTY_CODE: Shorthand code for the property.
-POS_PROPERTY_CODE: Point of Sale property code.
-OPEN_DATE: Date the property was opened.
-ADDRESS: Address of the property.
-CITY: City where the property is located.
-STATE: State where the property is located.
-ZIP: ZIP code of the property.
-LATITUDE: Latitude coordinate of the property.
-LONGITUDE: Longitude coordinate of the property.
-property_inventory
-Description: This table stores inventory data, such as the number of available rooms, on a daily basis for each property.
-Columns:
-INVENTORY_ID: Unique identifier for each inventory record.
-BUSINESS_DATE: The date for which the inventory is recorded.
-PROPERTY_CODE: Code identifying the property.
-PROPERTY_NAME: Name of the property.
-INVENTORY: Number of available rooms on the given date.
-reservations
-Description: This table stores reservation data, including stay dates, room categories, and room rates.
-Columns:
-RESERVATION_ID: Unique identifier for each reservation.
-CUSTOMER_ID: Unique identifier for the customer making the reservation.
-BOOKING_DATE: The date the reservation was made.
-STAY_DATE: The date the customer is staying at the property.
-PROPERTY_CODE: Code identifying the property where the reservation is made.
-ROOM_CATEGORY: The category or type of room booked.
-ROOM_RATE: The rate charged for the room.
+2. Database Tables
+    a. dim_property
+        Description: This table stores information about each property.
+    Columns:
+        PROPERTY_ID: Unique identifier for the property.
+        REPORT_NAME: Name of the property as it appears in reports.
+        PROPERTY_CODE: Shorthand code for the property.
+        POS_PROPERTY_CODE: Point of Sale property code.
+        OPEN_DATE: Date the property was opened.
+        ADDRESS: Address of the property.
+        CITY: City where the property is located.
+        STATE: State where the property is located.
+        ZIP: ZIP code of the property.
+        LATITUDE: Latitude coordinate of the property.
+        LONGITUDE: Longitude coordinate of the property.
+    b. property_inventory
+            Description: This table stores inventory data, such as the number of available rooms, on a daily basis for each property.
+    Columns:
+        INVENTORY_ID: Unique identifier for each inventory record.
+        BUSINESS_DATE: The date for which the inventory is recorded.
+        PROPERTY_CODE: Code identifying the property.
+        PROPERTY_NAME: Name of the property.
+        INVENTORY: Number of available rooms on the given date.
+        reservations
+        Description: This table stores reservation data, including stay dates, room categories, and room rates.
+        Columns:
+        RESERVATION_ID: Unique identifier for each reservation.
+        CUSTOMER_ID: Unique identifier for the customer making the reservation.
+        BOOKING_DATE: The date the reservation was made.
+        STAY_DATE: The date the customer is staying at the property.
+        PROPERTY_CODE: Code identifying the property where the reservation is made.
+        ROOM_CATEGORY: The category or type of room booked.
+        ROOM_RATE: The rate charged for the room.
 dim_revenue_center
 Description: This table stores data about revenue centers, including lines of business (LOB) associated with different services at the properties.
 Columns:
