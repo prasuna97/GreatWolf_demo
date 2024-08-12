@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, text
 # Create SQLite engine
 engine = create_engine('sqlite:///hotel_data.db')
 
-# SQL commands to create the tables
+# SQL commands to create tables
 create_tables = [
     """
     CREATE TABLE IF NOT EXISTS dim_property (

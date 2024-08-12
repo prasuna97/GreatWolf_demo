@@ -1,6 +1,6 @@
 # GreatWolf Data Engineering Project
 
-## Table of Contents
+## Table of Contents 
 
 1. [Introduction](#introduction)
 2. [Database Tables](#database-tables)

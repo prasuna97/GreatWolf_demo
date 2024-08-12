@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# Define the folder path
+# Define the folder path for data files
 folder_path = 'GW_DataEngineer'
 
 # Create SQLite engine

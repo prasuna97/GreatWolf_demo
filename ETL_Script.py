@@ -28,7 +28,7 @@ GROUP BY
     r.STAY_DATE, p.REPORT_NAME, r.ROOM_CATEGORY;
 """
 
-# Ancillary Revenue
+# Ancillary - Revenue
 ancillary_summary_query = """
 SELECT
     DATE(a.CHECK_DATETIME) AS Date,
